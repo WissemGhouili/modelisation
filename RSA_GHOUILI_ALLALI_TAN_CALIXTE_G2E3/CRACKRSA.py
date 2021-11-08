@@ -8,14 +8,14 @@ Created on Tue Nov  2 19:27:38 2021
 
 def decompose (n): 
     i=2
-    M=[]
+    Facteur=[]
     while n>1: 
         while n%i==0: 
-            M.append(i)
+            Facteur.append(i)
             n=n/i
         i=i+1
     
-    return M
+    return Facteur
 
         
 def est_Premier(nb):
@@ -107,10 +107,9 @@ def decrypte(ContenuCrypte, e, n):
 
 
     
-messageCrypté = [20365, 6953, 20502, 764, 4102, 3115, 764, 3187, 11907, 9468, 9468, 3115, 764, 7357, 764, 
-                 11907, 14586, 3742, 18899, 3115, 11008, 14924]
-n = 21209
-d = 409
+messageCrypté = [498, 484, 58, 404, 660, 221, 404, 545, 101, 86, 86, 221, 404, 116, 404, 101, 184, 757, 336, 221, 611, 253]
+n = 899
+d = 59
 cléPublique = (n, d)
 print("On récupere la clé Publique qui est :", cléPublique, '\n', "Nous arrivons à intercepter un message crypté entre Alice et Bob qui est : \n", messageCrypté, '\n')
 

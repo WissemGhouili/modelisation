@@ -89,7 +89,7 @@ def euclideEtendu(a, b, Reste, Quotient):
     
 
               
-
+# CHOIX DE P ET Q
     
 while True:
     print("Choisissez un nombre premier 'q'");
@@ -109,7 +109,7 @@ while True:
 
    
 
-
+# CALCUL DE N ET PHI
 n = p * q;
 print("N est égal au produit de p et q :", n);
 
@@ -121,14 +121,17 @@ Reste=[]
 Quotient=[]
 
 
-d = genereNbPremierEntre(100, 400)
+# GENERATION ALÉATOIRE DE D
+print("Choix de D en cours, cela peut prendre quelques instant")
 while True:
+    d = genereNbPremierEntre(2, fi - 1)
     if pgcd(d, fi) != 1:
-        genereNbPremierEntre(100, 400)
+        d = genereNbPremierEntre(2, fi - 1)
     else:
         break
 print("On choisit le nombre premier 'd' qui est égale à", d, "premier avec 'ϕ'");
 
+# ALGO D'EUCLIDE ET EUCLIDE ETENDU
 euclide(d, fi, Reste, Quotient)
 
 
@@ -139,6 +142,7 @@ Quotient.reverse()
 
 e = euclideEtendu(d, fi, Reste, Quotient)
 
+# GENERATION CLÉ PUBLIQUE ET CLÉ PRIVÉE
 clePublique = (n, d)
 clePrive = (n, e)
 print("Clé publique:", clePublique)

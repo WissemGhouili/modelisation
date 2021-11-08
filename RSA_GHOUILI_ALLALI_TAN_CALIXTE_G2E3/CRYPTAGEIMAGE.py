@@ -179,18 +179,18 @@ Image_crypte = Image.open("image_crypte.jpg")
 Image_crypte.show()
 
 
-p = 0
+it = 0
 print("Décryptage de l'image en cours, cela peut prendre quelque secondes \n")
 for i in range(x):
     for j in range (y):
         for k in range(3):
-            px = Cryptage[p] 
+            px = Cryptage[it] 
             px = (px ** e) % n
             image[i][j][k] = px
-            p = p+1
+            it = it+1
                         
 print("Décryptage reussis \n")
-print("Matrice image décrypté :", image)          
+print("Matrice image décrypté : \n", image)          
 Image.fromarray(image).save("image_decrypte.jpg")
 Image_decrypt = Image.open("image_decrypte.jpg")
 Image_decrypt.show()
